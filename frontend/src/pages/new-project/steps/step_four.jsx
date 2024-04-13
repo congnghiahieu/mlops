@@ -241,7 +241,7 @@ const StepFour = (props) => {
             updateState({ showUploadModal: true })
             handleDeploy()
           }}
-          className="rounded-md bg-indigo-600 py-[6px] px-4 text-white"
+          className="rounded-md bg-blue-600 py-[6px] px-4 text-white"
           // hidden
         >
           Predict

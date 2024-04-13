@@ -151,7 +151,7 @@ const LabelSelector = ({ current, labels, setLabels }) => {
   return (
     <div>
       <select
-        className="absolute mt-1 block rounded-md border-white py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm bottom-0 left-0 w-fit border bg-[#1e2a37e6] text-white"
+        className="absolute mt-1 block rounded-md border-white py-2 pl-3 pr-10 text-base focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm bottom-0 left-0 w-fit border bg-[#1e2a37e6] text-white"
         onChange={handleOnChange}
         defaultValue={labels && labels.length === 0 ? 'unknown' : currentLabel}
         value={currentLabel}
@@ -210,7 +210,7 @@ const LabelSelector = ({ current, labels, setLabels }) => {
                           <input
                             type="text"
                             name="label"
-                            className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                            className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
                             placeholder="New label"
                             ref={newLabelRef}
                           />
@@ -221,7 +221,7 @@ const LabelSelector = ({ current, labels, setLabels }) => {
                   <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                     <button
                       type="button"
-                      className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
+                      className="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
                       onClick={() => {
                         console.log(newLabelRef.current.value)
                         setOpen(false)
@@ -320,10 +320,10 @@ const Preview = ({ images, pagination, savedLabels, next, updateFields }) => {
       <div className="flex flex-col bg-white shadow-xl rounded-md h-full p-10">
         <div className="flex justify-between items-center w-full my-5">
           <label>Label all your images to start training process</label>
-          <div className="relative flex rounded-md bg-indigo-600 justify-between items-center text-white">
+          <div className="relative flex rounded-md bg-blue-600 justify-between items-center text-white">
               <button
                 onClick={handleTrain}
-                className="hover:bg-indigo-800 py-[6px] px-4 rounded-md w-fit"
+                className="hover:bg-blue-800 py-[6px] px-4 rounded-md w-fit"
               >
                 Train Model
               </button>
@@ -337,7 +337,7 @@ const Preview = ({ images, pagination, savedLabels, next, updateFields }) => {
                 top-full right-0 py-4 px-3 bg-white w-[120%] rounded-md shadow-md"
                 >
                   <button
-                    className={`bg-indigo-600 hover:bg-indigo-800  text-white group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    className={`bg-blue-600 hover:bg-blue-800  text-white group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                     onClick={() => {
                       handleOpentTrainModel()
                     }}

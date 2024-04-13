@@ -15,7 +15,7 @@ const Pagination = (props) => {
             }}
             className={` ${
               currentPage === 1 && 'hidden'
-            } inline-flex cursor-pointer items-center border-t-2 border-transparent pt-4 pl-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-indigo-700 hover:scale-110  !select-none`}
+            } inline-flex cursor-pointer items-center border-t-2 border-transparent pt-4 pl-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-blue-700 hover:scale-110  !select-none`}
           >
             <ArrowLongLeftIcon className="mr-3 h-5 w-5 text-gray-400" aria-hidden="true" />
             Previous
@@ -30,9 +30,9 @@ const Pagination = (props) => {
                   key={`index${'-' + index}'}`}
                   className={`${
                     index + 1 === currentPage
-                      ? 'border-indigo-500 text-indigo-700 font-bold !text-[20px]'
+                      ? 'border-blue-500 text-blue-700 font-bold !text-[20px]'
                       : 'border-transparent text-gray-500'
-                  } cursor-pointer hover:font-bold inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium transition-all !duration-500 hover:text-indigo-600  select-none ease`}
+                  } cursor-pointer hover:font-bold inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium transition-all !duration-500 hover:text-blue-600  select-none ease`}
                 >
                   {index + 1}
                 </a>
@@ -48,7 +48,7 @@ const Pagination = (props) => {
               return (
                 <span
                   key={`index${index + '-  index}'}`}
-                  className="text-gray-500 inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium transition-all hover:text-indigo-600  select-none"
+                  className="text-gray-500 inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium transition-all hover:text-blue-600  select-none"
                 >
                   ...
                 </span>
@@ -67,7 +67,7 @@ const Pagination = (props) => {
             }}
             className={` ${
               currentPage === totalPages && 'hidden'
-            } cursor-pointer inline-flex items-center border-t-2 border-transparent pt-4 pl-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-indigo-700 hover:scale-110  select-none`}
+            } cursor-pointer inline-flex items-center border-t-2 border-transparent pt-4 pl-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-blue-700 hover:scale-110  select-none`}
           >
             Next
             <ArrowLongRightIcon className="ml-3 h-5 w-5 text-gray-400" aria-hidden="true" />

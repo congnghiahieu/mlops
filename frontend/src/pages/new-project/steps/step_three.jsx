@@ -98,7 +98,7 @@ const StepThree = (props) => {
             <div className="mt-4" aria-hidden="true">
               <div className="overflow-hidden rounded-full bg-gray-200">
                 <div
-                  className=" h-2 rounded-full bg-indigo-600"
+                  className=" h-2 rounded-full bg-blue-600"
                   style={{ width: `${processValue}%` }}
                 />
               </div>

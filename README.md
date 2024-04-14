@@ -23,7 +23,8 @@ Original projects:
 - Example:
 
 ```bash
-REACT_APP_API_URL=http://localhost:3000
+REACT_APP_API_URL=http://localhost:8000
+REACT_APP_DOMAIN_NAME=localhost
 REACT_APP_ML_SERVICE_ADDR= # ignore this
 ```
 

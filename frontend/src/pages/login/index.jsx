@@ -1,39 +1,30 @@
 import { message } from 'antd'
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import Cookies from 'universal-cookie'
 import * as auth from '../../api/auth'
 import logo from '../../assets/images/logo.png'
+import useAuth from '../../hooks/useAuth'
 import { validateEmail, validatePassword } from '../../utils/validate'
 
 const Login = () => {
     const cookies = new Cookies()
     const navigate = useNavigate()
-    const writeCookies = ({ accessToken, refreshToken }) => {
-        const cookieOptions = {
-            path: '/',
-            secure: true,
-            sameSite: 'none',
-        }
-        if (process.env.REACT_APP_DOMAIN_NAME) {
-            cookieOptions.domain = process.env.REACT_APP_DOMAIN_NAME
-        }
-        cookies.set('accessToken', accessToken, cookieOptions)
-        if (refreshToken) {
-            cookies.set('refreshToken', refreshToken, cookieOptions)
-        }
-    }
+    const { login } = useAuth()
+    const { state } = useLocation();
+
     const onLogin = async (credential) => {
         try {
-            const { data } = await auth.login(credential)
-            // console.log(data)
-            writeCookies({ accessToken: data.access_token, refreshToken: data.refresh_token })
-
-            navigate('/app/projects', { replace: true })
+            const response = await auth.login(credential)
+            const { access_token: accessToken, refresh_token: refreshToken } = response.data;
+            login({ accessToken, refreshToken }).then(() => {
+                navigate(state?.path || '/app/projects', { replace: true })
+            });
         } catch (error) {
             console.error(error)
         }
     }
+
     const handleLogin = async (e) => {
         e.preventDefault()
         const formData = new FormData(e.target)

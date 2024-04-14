@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { paths } from '../assets/data/routes'
 import logo from '../assets/images/logo.png'
 import ActiveLink from './common/ActiveLink'
+import useAuth from '../hooks/useAuth'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -17,7 +18,10 @@ const NavBar = () => {
         'inline-flex items-center border-b-2 border-blue-500 px-1 pt-1 text-sm font-bold text-gray-900'
 
     const navigate = useNavigate()
+    const { logout: authLogout } = useAuth()
+
     const logout = () => {
+        authLogout();
         navigate('/', { replace: true })
     }
 
@@ -88,7 +92,7 @@ const NavBar = () => {
                                             <Menu.Item>
                                                 {({ active }) => (
                                                     <a
-                                                        href="/profile"
+                                                        onClick={() => navigate(paths.PROFILE, { replace: true })}
                                                         className={classNames(
                                                             active ? 'bg-gray-100' : '',
                                                             'block px-4 py-2 text-sm text-gray-700'
@@ -101,7 +105,7 @@ const NavBar = () => {
                                             <Menu.Item>
                                                 {({ active }) => (
                                                     <a
-                                                        href="settings"
+                                                        onClick={() => navigate(paths.SETTINGS, { replace: true })}
                                                         className={classNames(
                                                             active ? 'bg-gray-100' : '',
                                                             'block px-4 py-2 text-sm text-gray-700'
@@ -115,6 +119,7 @@ const NavBar = () => {
                                                 {({ active }) => (
                                                     <a
                                                         href="/"
+                                                        onClick={() => logout()}
                                                         className={classNames(
                                                             active ? 'bg-gray-100' : '',
                                                             'block px-4 py-2 text-sm text-gray-700 border-t text-rose-500'

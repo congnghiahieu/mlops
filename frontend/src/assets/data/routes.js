@@ -6,6 +6,7 @@ const paths = Object.freeze({
   DASHBOARD: '/app/dashboard',
   PROJECTS: '/app/projects',
   PROFILE: '/profile',
+  SETTINGS: '/settings',
   MODELS: '/app/models',
   PREDICT: '/app/predict',
 })

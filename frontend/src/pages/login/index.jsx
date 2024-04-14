@@ -2,10 +2,10 @@ import { message } from 'antd'
 import React from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import Cookies from 'universal-cookie'
-import * as auth from '../../api/auth'
-import logo from '../../assets/images/logo.png'
-import useAuth from '../../hooks/useAuth'
-import { validateEmail, validatePassword } from '../../utils/validate'
+import * as auth from 'src/api/auth'
+import logo from 'src/assets/images/logo.png'
+import useAuth from 'src/hooks/useAuth'
+import { validateEmail, validatePassword } from 'src/utils/validate'
 
 const Login = () => {
     const cookies = new Cookies()

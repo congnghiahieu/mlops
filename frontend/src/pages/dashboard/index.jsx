@@ -1,10 +1,10 @@
 import { message } from 'antd'
 import React, { useReducer } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import * as projectAPI from '../../api/project'
-import { UploadTypes } from '../../assets/data/constants'
-import { validateFiles } from '../../utils/file'
-import Loading from '../../components/Loading'
+import * as projectAPI from 'src/api/project'
+import { UploadTypes } from 'src/assets/data/constants'
+import { validateFiles } from 'src/utils/file'
+import Loading from 'src/components/Loading'
 
 const LOAD_CHUNK = 10
 

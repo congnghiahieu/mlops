@@ -2,10 +2,10 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { paths } from '../assets/data/routes'
-import logo from '../assets/images/logo.png'
+import { paths } from 'src/assets/data/routes'
+import logo from 'src/assets/images/logo.png'
 import ActiveLink from './common/ActiveLink'
-import useAuth from '../hooks/useAuth'
+import useAuth from 'src/hooks/useAuth'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')

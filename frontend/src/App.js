@@ -1,10 +1,10 @@
 import { useRoutes } from 'react-router-dom'
-import './App.css'
-import routes from './routes/routes'
+import 'src/App.css'
+import routes from 'src/routes/routes'
 
 const App = () => {
-  const appRoutes = useRoutes(routes)
-  return appRoutes
+    const appRoutes = useRoutes(routes)
+    return appRoutes
 }
 
 export default App

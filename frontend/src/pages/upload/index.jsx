@@ -1,5 +1,5 @@
 import React from 'react'
-import UploadFolder from '../../components/UploadFolder'
+import UploadFolder from 'src/components/UploadFolder'
 
 const Upload = () => {
   // return (

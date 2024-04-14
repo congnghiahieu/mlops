@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BuildIcon, SettingIcon, ModelIcon, DeployIcon, TasksIcon } from '../components/icons'
+import { BuildIcon, SettingIcon, ModelIcon, DeployIcon, TasksIcon } from 'src/components/icons'
 import clsx from 'clsx'
 
 const navigation = [

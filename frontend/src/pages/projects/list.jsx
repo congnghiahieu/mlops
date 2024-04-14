@@ -2,7 +2,7 @@ import ProjectCard from './card'
 import { RectangleStackIcon } from '@heroicons/react/20/solid'
 import { PlusIcon } from '@heroicons/react/24/solid'
 import { useReducer, useEffect } from 'react'
-import instance from '../../api/axios'
+import instance from 'src/api/axios'
 import { message } from 'antd'
 
 const initialState = {

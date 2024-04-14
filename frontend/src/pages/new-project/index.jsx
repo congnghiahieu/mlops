@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { listImages } from '../../api/project'
-import { useMultistepForm } from '../../hooks/useMultiStepForm'
+import { listImages } from 'src/api/project'
+import { useMultistepForm } from 'src/hooks/useMultiStepForm'
 import StepFour from './steps/step_four'
 import StepOne from './steps/step_one'
 import StepThree from './steps/step_three'
 import StepTwo from './steps/step_two'
-import SideBar from '../../components/SideBar'
+import SideBar from 'src/components/SideBar'
 
 const stepData = [
     { id: '01', name: 'Upload', href: '/app/new-project/step1', status: 'complete' },

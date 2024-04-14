@@ -1,14 +1,13 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import NavBar from '../NavBar'
-import RequireAuth from './RequireAuth'
+import NavBar from 'src/components/NavBar'
 
 const DefaultLayout = () => {
     return (
-        <RequireAuth>
+        <>
             <NavBar />
             <Outlet className="outlet" />
-        </RequireAuth>
+        </>
     )
 }
 

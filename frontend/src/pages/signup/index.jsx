@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import logo from '../../assets/images/logo.png'
-import { validatePassword } from '../../utils/validate'
-import { signup } from '../../api/auth'
+import logo from 'src/assets/images/logo.png'
+import { validatePassword } from 'src/utils/validate'
+import { signup } from 'src/api/auth'
 import { useNavigate } from 'react-router-dom'
 
 const SignUp = () => {

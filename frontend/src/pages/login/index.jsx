@@ -1,49 +1,47 @@
-import { message } from 'antd'
-import React from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
-import Cookies from 'universal-cookie'
-import * as auth from 'src/api/auth'
-import logo from 'src/assets/images/logo.png'
-import useAuth from 'src/hooks/useAuth'
-import { validateEmail, validatePassword } from 'src/utils/validate'
+import React from 'react';
+import { message } from 'antd';
+import { useNavigate, useLocation } from 'react-router-dom';
+import * as auth from 'src/api/auth';
+import logo from 'src/assets/images/logo.png';
+import useAuth from 'src/hooks/useAuth';
+import { validateEmail, validatePassword } from 'src/utils/validate';
 
 const Login = () => {
-    const cookies = new Cookies()
-    const navigate = useNavigate()
-    const { login } = useAuth()
+    const navigate = useNavigate();
+    const { login } = useAuth();
     const { state } = useLocation();
 
     const onLogin = async (credential) => {
         try {
-            const response = await auth.login(credential)
-            const { access_token: accessToken, refresh_token: refreshToken } = response.data;
-            login({ accessToken, refreshToken }).then(() => {
-                navigate(state?.path || '/app/projects', { replace: true })
+            const { data } = await auth.login(credential);
+            login({ accessToken: data.access_token, refreshToken: data.refresh_token }).then(() => {
+                navigate(state?.path || '/app/projects', { replace: true });
             });
         } catch (error) {
-            console.error(error)
+            console.error(error);
         }
-    }
+    };
 
     const handleLogin = async (e) => {
-        e.preventDefault()
-        const formData = new FormData(e.target)
-        const email = formData.get('email')
-        const password = formData.get('password')
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const email = formData.get('email');
+        const password = formData.get('password');
         const credential = {
             email,
             password,
-        }
-        // validate user info
+        };
+
         if (!validateEmail(credential.email)) {
-            return message.error('Email is invalid.')
+            return message.error('Email is invalid.');
         }
 
         if (!validatePassword(credential.password)) {
-            return message.error('Password is invalid.')
+            return message.error('Password is invalid.');
         }
-        onLogin(credential)
-    }
+
+        onLogin(credential);
+    };
 
     return (
         <>
@@ -51,9 +49,16 @@ const Login = () => {
                 <div className="w-full space-y-6 text-gray-600 sm:max-w-md">
                     <div className="bg-white shadow p-4 py-6 sm:p-6 sm:rounded-lg">
                         <div className="text-center">
-                            <img src={logo} width={150} className="mx-auto" alt="logo" />
+                            <img
+                                src={logo}
+                                width={150}
+                                className="mx-auto"
+                                alt="logo"
+                            />
                             <div className="mt-5 space-y-2">
-                                <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">Login</h3>
+                                <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">
+                                    Login
+                                </h3>
                             </div>
                         </div>
                         <form onSubmit={handleLogin} className="space-y-5">
@@ -81,7 +86,10 @@ const Login = () => {
                         </form>
                         <p className="mt-4">
                             Don't have an account?{' '}
-                            <a href="/signup" className="font-medium text-blue-600 hover:text-blue-500">
+                            <a
+                                href="/signup"
+                                className="font-medium text-blue-600 hover:text-blue-500"
+                            >
                                 Sign up
                             </a>
                         </p>
@@ -89,7 +97,7 @@ const Login = () => {
                 </div>
             </main>
         </>
-    )
-}
+    );
+};
 
-export default Login
+export default Login;

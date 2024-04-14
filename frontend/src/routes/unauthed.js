@@ -10,7 +10,7 @@ const routes = {
     children: [
         {
             path: paths.ROOT,
-            element: <Login />,
+            element: <Home />,
         },
         {
             path: paths.LOGIN,

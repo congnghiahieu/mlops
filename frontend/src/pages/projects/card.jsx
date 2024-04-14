@@ -13,7 +13,7 @@ export default function ProjectCard({ project, className }) {
             <div
                 key={project._id}
                 className={clsx(
-                    'relative group rounded-xl bg-white shadow transition duration-300',
+                    'relative group rounded-xl bg-gray-50 shadow-md transition duration-300',
                     className
                 )}
             >
@@ -31,7 +31,7 @@ export default function ProjectCard({ project, className }) {
                     </span>
                 </div>
 
-                <div className="mt-5 group-hover:bg-blue-50 p-6 rounded-xl transition duration-300">
+                <div className="mt-5 bg-gray-100 group-hover:bg-blue-100 p-6 rounded-xl transition duration-300">
                     <div className="flex w-full justify-between items-center">
                         <h3 className="text-xl font-medium">
                             <a

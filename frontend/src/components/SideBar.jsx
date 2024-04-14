@@ -18,12 +18,12 @@ const SideBar = ({ className }) => {
     return (
         <div
             className={clsx(
-                'md:w-[80px]',
-                'md:flex md:flex-col duration-300 h-full relative',
+                'w-[80px]',
+                'duration-300 relative',
                 className
             )}
         >
-            <div className="flex flex-grow flex-col overflow-y-auto h-[calc(100vh-60px)] bg-blue-50">
+            <div className="fixed h-[calc(100vh-60px)] w-[80px] flex flex-grow flex-col overflow-y-auto bg-blue-50">
                 <div className="py-3 flex flex-grow flex-col justify-between">
                     <nav className="flex flex-col gap-4 px-2 pb-4">
                         {navigation.map((item) => (

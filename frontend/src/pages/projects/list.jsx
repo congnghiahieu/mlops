@@ -81,7 +81,7 @@ export default function ProjectList() {
 
                             {dashboardState.projects.length > 0 ? (
                                 <div
-                                    className="px-3  mx-auto pt-5 overflow-hidden sm:grid sm:grid-cols-2 xl:grid-cols-3 gap-5 py-4"
+                                    className="px-3  mx-auto pt-5 overflow-hidden grid sm:grid-cols-2 xl:grid-cols-3 gap-5 py-4"
                                 >
                                     {dashboardState.projects.map((project) => (
                                         <ProjectCard key={project._id} project={project} />

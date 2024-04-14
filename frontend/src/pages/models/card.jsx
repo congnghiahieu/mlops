@@ -1,7 +1,7 @@
 import { CubeTransparentIcon } from '@heroicons/react/24/outline'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
-import { paths } from 'src/assets/data/routes'
+import { paths } from 'src/constants/routes'
 dayjs.extend(relativeTime)
 
 function classNames(...classes) {

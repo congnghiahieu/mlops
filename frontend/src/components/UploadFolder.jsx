@@ -1,6 +1,6 @@
 import React, { forwardRef, useState } from 'react'
 import { uploadFiles } from 'src/api/project'
-import { UploadTypes } from 'src/assets/data/constants'
+import { UploadTypes } from 'src/constants/file'
 import { validateFiles } from 'src/utils/file'
 
 const UploadFolder = ({ projectID, uploadedImages }) => {

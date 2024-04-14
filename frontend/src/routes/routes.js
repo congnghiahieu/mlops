@@ -1,4 +1,4 @@
-import { paths } from 'src/assets/data/routes'
+import { paths } from 'src/constants/routes'
 import UnAuthed from "src/layouts/UnAuthed"
 import DefaultLayout from 'src/layouts/DefaultLayout'
 

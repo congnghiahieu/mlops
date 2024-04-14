@@ -2,7 +2,7 @@ import { message } from 'antd'
 import React, { useReducer } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import * as projectAPI from 'src/api/project'
-import { UploadTypes } from 'src/assets/data/constants'
+import { UploadTypes } from 'src/constants/file'
 import { validateFiles } from 'src/utils/file'
 import Loading from 'src/components/Loading'
 

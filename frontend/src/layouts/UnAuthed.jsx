@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import useAuth from "src/hooks/useAuth";
 import { useLocation, Navigate } from 'react-router-dom';
 import Loading from 'src/components/Loading';
-import { paths } from "src/assets/data/routes";
+import { paths } from "src/constants/routes";
 import { Outlet } from 'react-router-dom'
 
 export default function UnAuthed() {

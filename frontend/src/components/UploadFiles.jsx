@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { UploadTypes } from 'src/assets/data/constants'
+import { UploadTypes } from 'src/constants/file'
 import { uploadFiles } from 'src/api/project'
 import { validateFiles } from 'src/utils/file'
 

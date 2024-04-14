@@ -1,4 +1,4 @@
-import { ALLOWED_FILE_EXTENSIONS } from 'src/assets/data/constants'
+import { ALLOWED_FILE_EXTENSIONS } from 'src/constants/file'
 
 const isAllowedExtension = (fileName) => {
     const idx = fileName.lastIndexOf('.')

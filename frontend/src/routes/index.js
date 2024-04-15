@@ -1,5 +1,5 @@
 import authed from './authed';
-import unauthed from './unauthed';
+import nonAuthed from './nonAuthed';
 import error404 from './404.js';
 
-export default [authed, unauthed, error404];
+export default [authed, nonAuthed, error404];

@@ -1,12 +1,12 @@
 import { paths } from 'src/constants/paths';
 
-import UnAuthed from 'src/layouts/UnAuthed';
+import NonAuthed from 'src/layouts/nonAuthed';
 import Home from 'src/pages/home';
 import Login from 'src/pages/login';
 import SignUp from 'src/pages/signup';
 
 const routes = {
-    element: <UnAuthed />,
+    element: <NonAuthed />,
     children: [
         {
             path: paths.ROOT,

@@ -102,6 +102,7 @@ export default function ProjectBuild(props) {
                                         ? 'step'
                                         : false
                                 }
+                                key={idx}
                                 className="flex-1 last:flex-none flex gap-x-2 md:items-center"
                             >
                                 <div className="flex items-center flex-col gap-x-2">

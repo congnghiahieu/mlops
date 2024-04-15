@@ -16,16 +16,19 @@ export default function ProjectList() {
 
     const handleCreateProject = async (event) => {
         event.preventDefault();
+
         const formData = new FormData(event.target);
         const data = Object.fromEntries(formData);
         try {
-            const response = await instance.post(API_URL.all_models, data, {
+            const response = await instance.post(API_URL.all_projects, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
             });
 
+            console.log({ response });
             if (response.status === 200) {
+                console.log({ response });
                 window.location = PATHS.PROJECT_BUILD(response.data._id);
             }
         } catch (error) {
@@ -34,7 +37,7 @@ export default function ProjectList() {
     };
 
     const getProjects = async () => {
-        const response = await instance.get(API_URL.all_project);
+        const response = await instance.get(API_URL.all_projects);
         updateState({ projects: response.data });
         return response.data;
     };

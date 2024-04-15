@@ -41,43 +41,48 @@ const routes = {
                     element: <Projects />,
                 },
                 {
-                    path: '/app/upload',
-                    element: <Upload />,
-                },
-                {
-                    path: '/app/preview',
-                    element: <Preview />,
-                },
-                {
-                    path: '/app/project/:id',
-                    element: <ProjectLayout />,
+                    path: '/app/',
                     children: [
                         {
-                            path: 'build',
-                            element: <ProjectBuild />,
+                            path: 'upload',
+                            element: <Upload />,
                         },
                         {
-                            path: 'model',
-                            element: <ProjectModels />,
+                            path: 'preview',
+                            element: <Preview />,
                         },
                         {
-                            path: 'deploy',
-                            element: <ProjectDeploy />,
-                        },
-                        {
-                            path: 'predict',
-                            element: <ProjectPredict />,
-                        },
-                        {
-                            path: 'tasks',
-                            element: <ProjectTasks />,
-                        },
-                        {
-                            path: 'settings',
-                            element: <ProjectSettings />,
-                        },
+                            path: 'project/:id',
+                            element: <ProjectLayout />,
+                            children: [
+                                {
+                                    path: 'build',
+                                    element: <ProjectBuild />,
+                                },
+                                {
+                                    path: 'model',
+                                    element: <ProjectModels />,
+                                },
+                                {
+                                    path: 'deploy',
+                                    element: <ProjectDeploy />,
+                                },
+                                {
+                                    path: 'predict',
+                                    element: <ProjectPredict />,
+                                },
+                                {
+                                    path: 'tasks',
+                                    element: <ProjectTasks />,
+                                },
+                                {
+                                    path: 'settings',
+                                    element: <ProjectSettings />,
+                                },
+                            ]
+                        }
                     ]
-                }
+                },
             ],
         },
     ],

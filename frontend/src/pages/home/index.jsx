@@ -141,8 +141,6 @@ export default function Home() {
                         </div>
                         <a
                             href="/login"
-                            rel="noopener noreferrer"
-                            target="_blank"
                             className="bg-black px-4 py-2 border rounded-md text-white tracking-wide"
                         >
                             Login

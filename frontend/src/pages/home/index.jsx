@@ -91,7 +91,7 @@ export default function Home() {
                                         <div className="relative grid gap-6 bg-white px-2 py-6 sm:gap-8 ">
                                             <a
                                                 href="/"
-                                                className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-800 tr04"
+                                                className="-m-3 p-3 flex items-start rounded-lg hover:bg-blue-50 tr04"
                                             >
                                                 <div className="ml-4">
                                                     <p className="text-base font-medium text-black">
@@ -104,7 +104,7 @@ export default function Home() {
                                             </a>
                                             <a
                                                 href="/"
-                                                className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-800 tr04"
+                                                className="-m-3 p-3 flex items-start rounded-lg hover:bg-blue-50 tr04"
                                             >
                                                 <div className="ml-4">
                                                     <p className="text-base font-medium text-black">
@@ -117,7 +117,7 @@ export default function Home() {
                                             </a>
                                             <a
                                                 href="/"
-                                                className="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-800 tr04"
+                                                className="-m-3 p-3 flex items-start rounded-lg hover:bg-blue-50 tr04"
                                             >
                                                 <div className="ml-4">
                                                     <p className="text-base font-medium text-black">

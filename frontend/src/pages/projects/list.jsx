@@ -4,6 +4,8 @@ import { PlusIcon } from '@heroicons/react/24/solid';
 import { useReducer, useEffect } from 'react';
 import instance from 'src/api/axios';
 import { message } from 'antd';
+import { API_URL } from 'src/constants/api';
+import { PATHS } from 'src/constants/paths';
 
 const initialState = {
     showUploader: false,
@@ -17,14 +19,14 @@ export default function ProjectList() {
         const formData = new FormData(event.target);
         const data = Object.fromEntries(formData);
         try {
-            const response = await instance.post('/projects', data, {
+            const response = await instance.post(API_URL.all_models, data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
             });
 
             if (response.status === 200) {
-                window.location = `/app/new-project?id=${response.data._id}`;
+                window.location = PATHS.PROJECT_BUILD(response.data._id);
             }
         } catch (error) {
             message.error('Project already existed');
@@ -32,7 +34,7 @@ export default function ProjectList() {
     };
 
     const getProjects = async () => {
-        const response = await instance.get('/projects');
+        const response = await instance.get(API_URL.all_project);
         updateState({ projects: response.data });
         return response.data;
     };

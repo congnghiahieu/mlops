@@ -1,4 +1,4 @@
-import { paths } from 'src/constants/paths';
+import { PATHS } from 'src/constants/paths';
 
 import Dashboard from 'src/pages/dashboard';
 import Projects from 'src/pages/projects';
@@ -20,24 +20,24 @@ const routes = {
     element: <DefaultLayout />,
     children: [
         {
-            path: paths.PROFILE,
+            path: PATHS.PROFILE,
             element: <Profile />,
         },
         {
-            path: paths.SETTINGS,
+            path: PATHS.SETTINGS,
             element: <Settings />,
         },
         {
-            path: paths.DEFAULT,
+            path: PATHS.DEFAULT,
             element: <RequireAuth />,
             children: [
                 {
                     index: true,
-                    path: paths.DASHBOARD,
+                    path: PATHS.DASHBOARD,
                     element: <Dashboard />,
                 },
                 {
-                    path: paths.PROJECTS,
+                    path: PATHS.PROJECTS,
                     element: <Projects />,
                 },
                 {

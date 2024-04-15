@@ -4,6 +4,7 @@ import { PlusIcon } from '@heroicons/react/24/solid';
 import { useReducer, useEffect } from 'react';
 import instance from 'src/api/axios';
 import { message } from 'antd';
+import { API_URL } from 'src/constants/api';
 
 const initialState = {
     showUploader: false,
@@ -16,7 +17,7 @@ export default function ProjectModels() {
     }, initialState);
 
     const getModels = async () => {
-        const { data } = await instance.get('/projects/models');
+        const { data } = await instance.get(API_URL.all_models);
         updateState({ models: data });
         return data;
     };

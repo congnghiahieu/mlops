@@ -2,7 +2,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Fragment } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { paths } from 'src/constants/paths';
+import { PATHS } from 'src/constants/paths';
 import logo from 'src/assets/images/logo.png';
 import ActiveLink from './common/ActiveLink';
 import useAuth from 'src/hooks/useAuth';
@@ -65,7 +65,7 @@ const NavBar = () => {
                                 </div>
                                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                                     <ActiveLink
-                                        to={paths.PROJECTS}
+                                        to={PATHS.PROJECTS}
                                         defaultclassname={defaultclassname}
                                         activeclassname={activeclassname}
                                     // className={({ isActive }) => (isActive ? activeClassName : defaultClassName)}
@@ -104,7 +104,7 @@ const NavBar = () => {
                                                     <a
                                                         onClick={() =>
                                                             navigate(
-                                                                paths.PROFILE,
+                                                                PATHS.PROFILE,
                                                                 {
                                                                     replace: true,
                                                                 }
@@ -126,7 +126,7 @@ const NavBar = () => {
                                                     <a
                                                         onClick={() =>
                                                             navigate(
-                                                                paths.SETTINGS,
+                                                                PATHS.SETTINGS,
                                                                 {
                                                                     replace: true,
                                                                 }

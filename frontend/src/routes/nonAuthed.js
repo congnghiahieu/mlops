@@ -1,4 +1,4 @@
-import { paths } from 'src/constants/paths';
+import { PATHS } from 'src/constants/paths';
 
 import NonAuthed from 'src/layouts/nonAuthed';
 import Home from 'src/pages/home';
@@ -9,15 +9,15 @@ const routes = {
     element: <NonAuthed />,
     children: [
         {
-            path: paths.ROOT,
+            path: PATHS.ROOT,
             element: <Home />,
         },
         {
-            path: paths.LOGIN,
+            path: PATHS.LOGIN,
             element: <Login />,
         },
         {
-            path: paths.SIGNUP,
+            path: PATHS.SIGNUP,
             element: <SignUp />,
         },
     ],

@@ -1,6 +1,7 @@
 import { CubeTransparentIcon } from '@heroicons/react/24/outline';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
+import { PATHS } from 'src/constants/paths';
 dayjs.extend(relativeTime);
 
 function clsx(...classes) {
@@ -40,8 +41,8 @@ export default function ProjectCard({ project, className }) {
                             <a
                                 href={
                                     project.uploaded
-                                        ? `/app/project/${project?._id}/build&step=1`
-                                        : `/app/project/${project?._id}/build`
+                                        ? `${PATHS.PROJECT_BUILD(project?._id)}&step=1`
+                                        : PATHS.PROJECT_BUILD(project?._id)
                                 }
                                 className="focus:outline-none"
                             >

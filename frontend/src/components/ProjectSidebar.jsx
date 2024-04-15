@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import {
     BuildIcon,
     SettingIcon,
@@ -7,13 +6,14 @@ import {
     TasksIcon,
 } from 'src/components/icons';
 import clsx from 'clsx';
+import { PATHS } from 'src/constants/paths';
 
 const ProjectSidebar = ({ projectID, className }) => {
     const navigation = [
-        { name: 'Build', href: `/app/project/${projectID}/build`, icon: BuildIcon, current: false },
-        { name: 'Model', href: `/app/project/${projectID}/model`, icon: ModelIcon, current: false },
-        { name: 'Deploy', href: `/app/project/${projectID}/deploy`, icon: DeployIcon, current: false },
-        { name: 'Tasks', href: `/app/project/${projectID}/tasks`, icon: TasksIcon, current: false },
+        { name: 'Build', href: PATHS.PROJECT_BUILD(projectID), icon: BuildIcon, current: false },
+        { name: 'Model', href: PATHS.PROJECT_MODEL(projectID), icon: ModelIcon, current: false },
+        { name: 'Deploy', href: PATHS.PROJECT_DEPLOY(projectID), icon: DeployIcon, current: false },
+        { name: 'Tasks', href: PATHS.PROJECT_TASKS(projectID), icon: TasksIcon, current: false },
     ];
 
     return (
@@ -49,7 +49,7 @@ const ProjectSidebar = ({ projectID, className }) => {
                         ))}
                     </nav>
                     <a
-                        href={`/app/project/${projectID}/settings`}
+                        href={PATHS.PROJECT_SETTINGS(projectID)}
                         className={clsx(
                             'text-center text-gray-600 hover:text-blue-900',
                             'transition group flex flex-col items-center text-sm font-medium'

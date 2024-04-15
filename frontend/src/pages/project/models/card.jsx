@@ -1,7 +1,7 @@
 import { CubeTransparentIcon } from '@heroicons/react/24/outline';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { paths } from 'src/constants/paths';
+import { PATHS } from 'src/constants/paths';
 dayjs.extend(relativeTime);
 
 function classNames(...classes) {
@@ -35,7 +35,7 @@ export default function ModelCard({ model }) {
 					<div className="flex w-full justify-between items-center">
 						<h3 className="text-lg font-medium">
 							<a
-								href={paths.PREDICT}
+								href={PATHS.PREDICT}
 								className="focus:outline-none"
 							>
 								{/* Extend touch target to entire panel */}

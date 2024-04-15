@@ -5,6 +5,7 @@ import * as auth from 'src/api/auth';
 import logo from 'src/assets/images/logo.png';
 import useAuth from 'src/hooks/useAuth';
 import { validateEmail, validatePassword } from 'src/utils/validate';
+import { PATHS } from 'src/constants/paths';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -15,7 +16,7 @@ const Login = () => {
         try {
             const { data } = await auth.login(credential);
             login({ accessToken: data.access_token, refreshToken: data.refresh_token }).then(() => {
-                navigate(state?.path || '/app/projects', { replace: true });
+                navigate(state?.path || PATHS.PROJECTS, { replace: true });
             });
         } catch (error) {
             console.error(error);

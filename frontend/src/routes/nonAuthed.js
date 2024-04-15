@@ -1,23 +1,23 @@
-import { paths } from 'src/constants/paths';
+import { PATHS } from 'src/constants/paths';
 
-import UnAuthed from 'src/layouts/UnAuthed';
+import NonAuthed from 'src/layouts/nonAuthed';
 import Home from 'src/pages/home';
 import Login from 'src/pages/login';
 import SignUp from 'src/pages/signup';
 
 const routes = {
-    element: <UnAuthed />,
+    element: <NonAuthed />,
     children: [
         {
-            path: paths.ROOT,
+            path: PATHS.ROOT,
             element: <Home />,
         },
         {
-            path: paths.LOGIN,
+            path: PATHS.LOGIN,
             element: <Login />,
         },
         {
-            path: paths.SIGNUP,
+            path: PATHS.SIGNUP,
             element: <SignUp />,
         },
     ],

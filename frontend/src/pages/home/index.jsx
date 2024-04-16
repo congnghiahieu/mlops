@@ -172,7 +172,7 @@ export default function Home() {
                 </div>
                 <div className="container flex flex-col items-center justify-center mx-auto">
                     <img
-                        className="object-cover object-center w-3/4 mb-10 border shadow-md g327 rounded-xl"
+                        className="object-cover object-center w-3/4 mb-10 border shadow-md g327 rounded-xl hover:scale-110 transition duration-300"
                         alt="Placeholder Image"
                         src={placeholderImage}
                     ></img>

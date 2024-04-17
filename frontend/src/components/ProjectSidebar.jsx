@@ -7,8 +7,11 @@ import {
 } from 'src/components/icons';
 import clsx from 'clsx';
 import { PATHS } from 'src/constants/paths';
+import { useLocation } from 'react-router-dom';
 
 const ProjectSidebar = ({ projectID, className }) => {
+    const { pathname } = useLocation();
+
     const navigation = [
         { name: 'Build', href: PATHS.PROJECT_BUILD(projectID), icon: BuildIcon, current: false },
         { name: 'Model', href: PATHS.PROJECT_MODEL(projectID), icon: ModelIcon, current: false },
@@ -26,7 +29,7 @@ const ProjectSidebar = ({ projectID, className }) => {
                                 key={item.name}
                                 href={item.href}
                                 className={clsx(
-                                    item.current
+                                    pathname == item.href
                                         ? 'text-blue-900'
                                         : 'text-center text-gray-600 hover:text-blue-900',
                                     'transition group flex flex-col items-center justify-center text-sm font-medium'
@@ -34,7 +37,7 @@ const ProjectSidebar = ({ projectID, className }) => {
                             >
                                 <item.icon
                                     className={clsx(
-                                        item.current
+                                        pathname == item.href
                                             ? 'bg-blue-200 text-blue-900'
                                             : 'text-gray-400 group-hover:bg-blue-200 group-hover:text-blue-900',
                                         'mx-auto flex-shrink-0 rounded-xl w-11 h-11',
@@ -51,13 +54,17 @@ const ProjectSidebar = ({ projectID, className }) => {
                     <a
                         href={PATHS.PROJECT_SETTINGS(projectID)}
                         className={clsx(
-                            'text-center text-gray-600 hover:text-blue-900',
+                            pathname == PATHS.PROJECT_SETTINGS(projectID)
+                                ? 'text-blue-900'
+                                : 'text-center text-gray-600 hover:text-blue-900',
                             'transition group flex flex-col items-center text-sm font-medium'
                         )}
                     >
                         <SettingIcon
                             className={clsx(
-                                'text-gray-400 group-hover:bg-blue-200 group-hover:text-blue-900',
+                                pathname == PATHS.PROJECT_SETTINGS(projectID)
+                                    ? 'bg-blue-200 text-blue-900'
+                                    : 'text-gray-400 group-hover:bg-blue-200 group-hover:text-blue-900',
                                 'flex-shrink-0 rounded-xl w-11 h-11',
                                 'px-2 py-2'
                             )}
